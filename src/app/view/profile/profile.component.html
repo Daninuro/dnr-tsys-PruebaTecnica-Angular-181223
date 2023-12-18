@@ -1,0 +1,21 @@
+<div class="d-flex flex-column min-vh-100 justify-content-center align-items-center" *ngIf="token == 'NOT_FOUND'">
+    <h3 style="text-align: center;">
+        <strong>Please login</strong><br>
+        <strong>Redirecting in 2 seconds...</strong>
+        {{redirect()}}
+    </h3>
+</div>
+
+<div *ngIf="token != 'NOT_FOUND'" class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
+        <h3  style="margin-bottom: 2rem;">
+            <strong>{{username}}'s Profile</strong>
+        </h3>
+
+            <strong style="text-align: center; margin-right: 1rem; margin-left: 1rem;">Token:</strong>
+            <br>
+            <strong style="text-align: center; margin-right: 1rem; margin-left: 1rem; font-weight: lighter; word-break: break-word; margin-bottom: 2rem;">{{token}}</strong>
+            <br>
+            <strong>Role(s): </strong> <span style="text-align: center; margin-right: 1rem; margin-left: 1rem; font-weight: lighter">{{roles}}</span>
+  
+    
+    </div>

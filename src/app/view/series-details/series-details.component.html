@@ -1,0 +1,43 @@
+<div class="d-flex flex-column min-vh-100 justify-content-center align-items-center" *ngIf="!isLoggedIn">
+    <h3 style="text-align: center;">
+        <strong>Please login</strong><br>
+        <strong>Redirecting in 2 seconds...</strong>
+        {{redirect()}}
+    </h3>
+</div>
+
+<div class="container mt-5" *ngIf="isLoggedIn">
+    <div class="row">
+        <div class="col-md-4">
+            <img class="w-100 rounded" src="https://image.tmdb.org/t/p/w220_and_h330_face{{serie.poster_path}}">
+        </div>
+        <div class="col-md-8">
+            <div class="mt-4">
+                <p class="h4">➡️ Series Information</p>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Release Date</th>
+                        <th scope="col">Adult-rated</th>
+                        <th scope="col">Ratings #</th>
+                        <th scope="col">Average Mark</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">{{serie.name}}</th>
+                        <td>{{serie.first_air_date}}</td>
+                        <td>{{ adult }}</td>
+                        <td>{{serie.vote_count}}</td>
+                        <td>{{serie.vote_average}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                <p class="h4">🍿 Brief</p>
+                <p class="text-justify">{{serie.overview}}</p>
+                <button class="btn btn-success" (click)="back()"><i class="bi bi-arrow-left"></i> Go back</button>
+            </div>
+        </div>
+    </div>
+</div>

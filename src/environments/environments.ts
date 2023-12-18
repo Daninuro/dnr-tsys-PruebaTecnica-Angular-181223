@@ -1,4 +1,4 @@
 export const environment = {
-    apiUrl: 'https://myfood.up.railway.app',
-    production: false,
+    TMDB_API_KEY: "7cef0a361eec0d89fa96961bcbe659ab"
+
 };
